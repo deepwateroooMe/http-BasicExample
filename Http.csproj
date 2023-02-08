@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IocpSharp">
+      <HintPath>..\iocp-sharp\bin\Debug\IocpSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -90,12 +93,6 @@
     <Compile Include="src\WebSocket\FrameWriteStream.cs" />
     <Compile Include="src\WebSocket\FrameReadStream.cs" />
     <Compile Include="src\WebSocket\ProtocolUtils.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IocpSharp\IocpSharp.csproj">
-      <Project>{65ffb107-804c-4248-8164-b6154c6ae3a2}</Project>
-      <Name>IocpSharp</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

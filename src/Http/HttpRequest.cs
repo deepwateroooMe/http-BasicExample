@@ -263,7 +263,7 @@ namespace IocpSharp.Http
             if (!HasEntityBody || _entityReadStream != null) return;
             using(Stream forward = OpenRead())
             {
-                byte[] forwardBytes = new byte[32768];
+                byte[] forwardBytes = new byte[32768]; // 这里是流式读取里一条长读，以保证最多两次就把流里的数据给读完吗？只读两次，减少overhead消耗，提高读取流效率
                 //读取，丢弃
                 while (forward.Read(forwardBytes, 0, 32768) > 0) ;
             }
